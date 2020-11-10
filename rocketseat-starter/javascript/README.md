@@ -1,8 +1,5 @@
-:rocket: ROCKETSEAT STARTER :rocket:
+# Basic curso on the fundamentals of javascript.
 
-Resolutions of the start course exercises that have:
-- Javascript
-- ES6
-- React
-- React Native
-- Node
+:exclamation: You can find in this [link](https://github.com/rocketseat-education/starter-javascript-exercicios) the official resolution.
+
+:boom: This course are available for free on this website: https://app.rocketseat.com.br/starter 
