@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Exercicio 1</title>
+</head>
+<body>
+  <!-- Crie um botão que ao ser clicado cria um novo elemento em tela com a
+  forma de um quadradovermelho com 100px de altura e largura. Sempre que o
+  botão for clicado um novo quadrado deveaparecer na tela. -->
+  <div class="app">
+    <button class="btn">create a square </button>
+    <div class="squares"></div>
+  </div>
+  <script>
+    var btnElement = document.querySelector('.btn');
+    var containerSquares = document.querySelector('.squares');
+    
+    btnElement.onclick = function(){
+      var createSquare = document.createElement('div');
+
+      createSquare.style.width = '100px';
+      createSquare.style.height = '100px';
+      createSquare.style.backgroundColor = '#f00';
+      createSquare.style.marginBottom = '10px';
+
+      containerSquares.appendChild(createSquare);
+    }  
+  </script>
+</body>
+</html>

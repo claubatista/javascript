@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Exercicio 2</title>
+</head>
+<body>
+  <!-- Utilizando o resultado do primeiro desafio, toda vez que o 
+    usuário passar o mouse por cima dealgum quadrado troque sua cor 
+    para uma cor aleatória gerada pela função abaixo: -->
+  <div class="app">
+    <button class="btn">create a square </button>
+    <div class="squares"></div>
+  </div>
+  <script>
+    var btnElement = document.querySelector('.btn');
+    var containerSquares = document.querySelector('.squares');
+
+    function getRandomColor() {  
+      var letters = "0123456789ABCDEF";  
+      var color = "#";  
+      for (var i = 0; i < 6; i++) {    
+        color += letters[Math.floor(Math.random() * 16)];  
+      }  
+      return color;
+    }
+    
+    btnElement.onclick = function(){
+      var createSquare = document.createElement('div');
+
+      createSquare.style.width = '100px';
+      createSquare.style.height = '100px';
+      createSquare.style.backgroundColor = '#f00';
+      createSquare.style.marginBottom = '10px';
+
+      containerSquares.appendChild(createSquare);
+
+      createSquare.onmousemove = function() {
+       createSquare.style.backgroundColor = getRandomColor();
+      }
+    }  
+  </script>
+</body>
+</html>
