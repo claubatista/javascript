@@ -1,23 +1,37 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Exercicio 3</title>
+    <title>Exercicio 4</title>
   </head>
   <body>
-    <!-- A partir do seguinte vetor:
-      var nomes = ["Diego", "Gabriel", "Lucas"];
-      Preencha uma lista (<ul>) no HTML com os itens da seguinte forma: -->
+    <!-- Seguindo o resultado do exercício anterior adicione um input em tela e um botão 
+      Ao clicar no botão, a função adicionar() deve ser disparada adicionando um novo item a lista de
+      nomes baseado no nome preenchido no input e renderizando o novo item em tela juntos aosdemais itens anteriores. 
+      Além disso, o conteúdo do input deve ser apagado após o clique. -->
     <div id="app">
+      <input class="name" type="text" name="name">
+      <button onClick="add()">Add</button>
       <ul class="list"></ul>
     </div>
     <script>
         var names = ['Diego', 'Eduardo', 'Gabriel'];
         var listElement = document.querySelector('.list');
+        var inputElement = document.querySelector('.name')
+
+        function createItem(name){
+          var item = document.createElement('li');
+          item.innerHTML = name;
+          listElement.appendChild(item)
+        }
+
+        function add(){
+          names.push(inputElement.value);
+          createItem(inputElement.value); 
+          inputElement.value = ""; 
+        }
 
         for(i = 0; i < names.length; i++) {
-          var item = document.createElement('li');
-          item.innerHTML = names[i]
-          listElement.appendChild(item)
+          createItem(names[i])
         }
     </script>    
   </body>
