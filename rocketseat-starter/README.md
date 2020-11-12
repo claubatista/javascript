@@ -1,4 +1,4 @@
-:rocket: ROCKETSEAT STARTER :rocket:
+# :rocket: ROCKETSEAT STARTER :rocket:
 
 Resolutions of the start course exercises that have:
 - Javascript
