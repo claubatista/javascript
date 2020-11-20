@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Exercicio 2</title>
+</head>
+<body>
+  <!-- Crie uma tela com um <input> que deve receber o nome de um usuário no Github.
+      Após digitar onome do usuário e clicar no botão buscar a aplicação 
+      deve buscar pela API do Github (conformeURL abaixo) os dados de 
+      repositórios do usuário e mostrá-los em tela: URL de exemplo:
+      https://api.github.com/users/diego3g/repos
+      Basta alterar "diego3g" pelo nome do usuário. -->
+  <div class="app">
+    <input type="text" name="user">
+    <button onclick="listRepositories()">add</button>
+    <ul class="list"></ul>
+  </div>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    var listElement = document.querySelector('.list')
+
+    function createItem(repositores){
+      for(const repo of repositores){
+        var item = document.createElement('li');
+        item.innerHTML = repo.name;
+        listElement.appendChild(item)
+      }
+    }
+
+    function listRepositories(){
+      var userInput = document.querySelector('input')
+      listElement.innerHTML = "";
+
+      axios.get(`https://api.github.com/users/${userInput.value}/repos`)
+        .then(function(response){
+          createItem(response.data);
+          userInput.value = ""
+      })
+    }  
+  </script>
+</body>
+</html>
